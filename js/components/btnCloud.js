@@ -15,7 +15,6 @@ setListenerCloud(btnCloud, 'click', getPageCloud);
 
 export function getPageCloud(event) {
     event.preventDefault();
-    console.log('TEST');
     document.location.replace(configObj.urlCloud);
 }
 
