@@ -6,14 +6,36 @@
 }
 
 .header__image {
-    height: 42px;
+    height: 50px;
     cursor: pointer;
+    border: 2px solid black;
+    margin-left: 1170px;
 }
 
 .btn__cloud {
+    /* background-color: aqua; */
     margin-left: 30px;
+
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid black;
 }
 
-.btn__exit {
-    margin-left: 1200px;
+.btn__cloud:hover {
+    background-color: aqua;
+}
+
+/* .btn__exit {
+    margin-left: 1100px;
+    height: 2px;
+    cursor: pointer;
+} */
+
+.btn__local__db {
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+    margin-left: 10px;
+    border: 2px solid black;
+    cursor: pointer;
 }

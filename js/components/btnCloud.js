@@ -1,6 +1,8 @@
 import { configObj } from "../environments/environments.js";
+import { getData } from "../services/getData.js";
 
-const btnCloud = document.querySelector('.btn__cloud');
+const btnShow = document.querySelector('.btn__main__show'),
+      divImages = document.querySelector('.main-images');
 
 function setListenerCloud(element, type, hendler){
     if(!element) {
@@ -9,12 +11,44 @@ function setListenerCloud(element, type, hendler){
     element.addEventListener(type, hendler);
 }
 
-setListenerCloud(btnCloud, 'click', getPageCloud);
+setListenerCloud(btnShow, 'click', getDataFromAPI);
 
-// document.querySelector('.btn__cloud').addEventListener('click', getPageCloud);
+document.querySelector('.btn__cloud').addEventListener('click', showPageCloud);
 
-export function getPageCloud(event) {
+export function showPageCloud(event) {
     event.preventDefault();
     document.location.replace(configObj.urlCloud);
 }
 
+// btnShow.addEventListener('click', getDataFromAPI);
+
+
+function getDataFromAPI() {
+    console.log('Загрузка данных...');
+    getData(`https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${configObj.apiKeyFlickr}&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1`)
+    .then(data => {
+        data.photos.photo.forEach(item => {
+            divImages.insertAdjacentHTML('afterbegin', `
+            <div class="product-item">
+                <img src="https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg"/>
+                <div class="product-list">
+                    <h3>${item.title}</h3>
+                    <a href="" class="button">Добавить в локальное хранилище</a>
+                </div>
+            </div>
+            `);
+        }); 
+    });
+    // .then(data => console.log(data.photos));
+}
+
+// https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=c494d0c36c1ef5c9851f47d266649611&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1
+
+
+{/* <div class="product-item">
+<img src="https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg"/>
+  <div class="product-list">
+    <h3>${item.title}</h3>
+      <a href="" class="button">Добавить в локальное хранилище</a>
+  </div>
+</div> */}

@@ -4,19 +4,19 @@ import { MyLocalStorage } from "../services/useLocalStorage.js";
 
 
 const inputEmail = document.querySelector('.input__mail'),
-      inputPassword = document.querySelector('.input__password'),
-      inputForm = document.querySelector('.input__form');
+      inputPassword = document.querySelector('.input__password');
+    //   inputForm = document.querySelector('.input__form');
       
-function setListenerForm(element, type, hendler) {
-    if (!element) {
-        return;
-    }
-    element.addEventListener(type, hendler);
-}
+// function setListenerForm(element, type, hendler) {
+//     if (!element) {
+//         return;
+//     }
+//     element.addEventListener(type, hendler);
+// }
 
-setListenerForm(inputForm, 'submit', getDataForm);
+// setListenerForm(inputForm, 'submit', getDataForm);
 
-// document.querySelector('form').addEventListener('submit', getDataForm);
+document.querySelector('form').addEventListener('submit', getDataForm);
 
 
 function getDataForm(event) {

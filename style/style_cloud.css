@@ -6,16 +6,51 @@
 }
 
 .header__image {
-    height: 42px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* .active {
+    background-color: aqua;
+} */
+
+.btn__cloud {
+    background-color: aqua;
+    margin-left: 30px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.btn__main__show {
+    margin-left: 30px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.btn__local__db {
+    height: 50px;
+    width: 50px;
+    /* background-color: aqua; */
+    margin-left: 10px;
+    border: 2px solid black;
     cursor: pointer;
 }
+
+/* .btn__exit {
+    height: 52px;
+    cursor: pointer;
+} */
+
 
 /* .img:hover::after {
     content: attr(data-title);
 } */
 
-.btn__cloud {
-    margin-left: 30px;
+.btn__local__db:hover {
+    background-color: aqua;
 }
 
 * {
@@ -39,7 +74,7 @@ input {
     color: #1d1b1b;
 }
 
-button {
+.btn__serch {
     position: absolute;
     top: 0;
     right: 0px;
@@ -51,9 +86,78 @@ button {
     cursor: pointer;
 }
 
+
 /* button:before {
     content: "\f002";
     font-family: FontAwesome;
     font-size: 16px;
     color: #F9F0DA;
 } */
+
+.main-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .main__items {
+    display: flex;
+    flex-wrap: nowrap;
+} */
+
+.product-item {
+    /* display: flex; */
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #F5F5F5;
+    background: white;
+    font-family: "Open Sans";
+    transition: .3s ease-in;
+}
+
+/* .product-item:hover {
+    border-bottom: 2px solid #fc5a5a;
+} */
+
+.product-item img {
+    display: block;
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+
+.product-list {
+    background: #dbc4c4;
+    padding: 15px 0;
+}
+
+.product-list h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444444;
+    margin: 0 0 10px 0;
+}
+
+.price {
+    font-size: 16px;
+    color: #fc5a5a;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 12px;
+    background: #cccccc;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 28px;
+    transition: .3s ease-in;
+    border: 1px solid #fc5a5a;
+}
+
+.product-item:hover .button {
+    background: #fc5a5a;
+}

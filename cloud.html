@@ -14,25 +14,34 @@
     <header>
         <div class="header__items">
             <div class="btn__local__db">
-                <img class="header__image" src="./img/icons-book-stack.png" alt="DataBase">
+                <img class="header__image__local" src="./img/icons-book-stack.png" alt="DataBase">
             </div>
             <div class="btn__cloud">
-                <img class="header__image" src="./img/icons-cloud.png" alt="Cloud">
+                <img class="header__image__cloud " src="./img/icons-cloud.png" alt="Cloud">
+            </div>
+            <div>
+                <button class="btn__main__show">Показать</button>
             </div>
             <form>
                 <input type="text" placeholder="Искать здесь...">
-                <button type="submit"><img src="/img/ic_search.svg" alt=""></button>
+                <button class="btn__serch" type="submit"><img src="/img/ic_search.svg" alt=""></button>
             </form>
-            <img src="./img/icons-user.png" class="btn__exit header__image">
+            <div class="btn__exit">
+                <img src="./img/icons-user.png" class="btn__exit header__image">
+            </div>
         </div>
     </header>
     <main class="main__items">
+        <div class="main-images">
 
+        </div>
+        <!-- <button class="btn__main__show">Показать</button> -->
     </main>
 </body>
-<script type="module" src="/js/index.js"></script>
-<!-- <script type="module" src="./js/services/authExit.js"></script>
-<script type="module" src="./js/components/btnLocalDB.js"></script> -->
+<!-- <script type="module" src="/js/index.js"></script> -->
+<script type="module" src="./js/services/authExit.js"></script>
+<script type="module" src="./js/components/btnLocalDB.js"></script>
+<script type="module" src="/js/components/btnCloud.js"></script>
 
 
 
