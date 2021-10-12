@@ -156,6 +156,7 @@ input {
     line-height: 28px;
     transition: .3s ease-in;
     border: 1px solid #fc5a5a;
+    cursor: pointer;
 }
 
 .product-item:hover .button {

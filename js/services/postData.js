@@ -1,7 +1,8 @@
 
 import {configObj} from '../environments/environments.js';
 
-async function postData(url, apiKey, email, password) {
+
+export async function authPostData(url, apiKey, email, password) {
 
     const result = await fetch(`${url}${apiKey}`, {
         method: 'POST',
@@ -14,4 +15,14 @@ async function postData(url, apiKey, email, password) {
     return await result.json();
 }
 
-export {postData};
+export async function imagePostData(url, data) {
+    const result = await fetch(url , {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    return await result.json();
+}

@@ -1,5 +1,5 @@
 import { configObj } from "../environments/environments.js";
-import { postData } from "../services/authPostData.js";
+import { authPostData } from "../services/postData.js";
 import { MyLocalStorage } from "../services/useLocalStorage.js";
 
 
@@ -27,7 +27,7 @@ function getDataForm(event) {
         password: inputPassword.value
     };
 
-    postData(configObj.url, configObj.apiKey, inputObj.email, inputObj.password)
+    authPostData(configObj.url, configObj.apiKey, inputObj.email, inputObj.password)
     .then(data => {
         if(!data.idToken) {
             alert('Данные не верны');
