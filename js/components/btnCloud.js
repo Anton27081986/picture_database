@@ -40,7 +40,6 @@ function getDataFromAPI() {
             </div>
             `);
         });
-        
     })
     .then(data => new Promise((resolve, reject) => {
         
@@ -55,13 +54,12 @@ function addImageToCollection() {
     
     document.querySelectorAll('.button__add__image').forEach(item => {
         item.addEventListener('click', () => {
-            console.log(item.parentElement.parentElement.querySelector('.pictures__in__cloud').src);
             const objImageForFB = {
                 title: item.parentElement.querySelector('h3').textContent,
                 url: item.parentElement.parentElement.querySelector('.pictures__in__cloud').src
             };
             imagePostData(`${configObj.urlImageFB}pictures.json`, objImageForFB);
-            
+
         });
     });
 }

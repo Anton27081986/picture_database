@@ -18,3 +18,4 @@ export function showPageLocalDB() {
     document.location.replace(configObj.urlLocalDB);
     headerImageLocal.classList.add('active');
 }
+
