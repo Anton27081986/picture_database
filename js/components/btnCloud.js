@@ -32,25 +32,35 @@ function getDataFromAPI() {
         data.photos.photo.forEach(item => {
             divImages.insertAdjacentHTML('afterbegin', `
             <div class="product-item">
-                <img src="https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg"/>
+                <img class="pictures__in__cloud" src="https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg"/>
                 <div class="product-list">
                     <h3>${item.title}</h3>
                     <button class="button button__add__image">Добавить в коллекцию</button>
                 </div>
             </div>
             `);
-        }); 
+        });
+        
     })
     .then(data => new Promise((resolve, reject) => {
+        
         addImageToCollection();
-        resolve(data);
+        resolve();
+        
     }));
     
 }
 
 function addImageToCollection() {
+    
     document.querySelectorAll('.button__add__image').forEach(item => {
         item.addEventListener('click', () => {
+            console.log(item.parentElement.parentElement.querySelector('.pictures__in__cloud').src);
+            const objImageForFB = {
+                title: item.parentElement.querySelector('h3').textContent,
+                url: item.parentElement.parentElement.querySelector('.pictures__in__cloud').src
+            };
+            imagePostData(`${configObj.urlImageFB}pictures.json`, objImageForFB);
             
         });
     });

@@ -8,7 +8,7 @@ const configObj = {
     urlLocalDB: 'http://127.0.0.1:5500/local_DB.html',
     apiKeyFlickr: 'c494d0c36c1ef5c9851f47d266649611',
     urlFlickr: 'https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=c494d0c36c1ef5c9851f47d266649611&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1/json',
-    urlImageFB: 'https://pictures-db-default-rtdb.firebaseio.com/'
+    urlImageFB: 'https://pictures-db-default-rtdb.firebaseio.com/',
 };
 
 export {configObj};

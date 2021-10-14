@@ -18,7 +18,6 @@ const inputEmail = document.querySelector('.input__mail'),
 
 document.querySelector('form').addEventListener('submit', getDataForm);
 
-
 function getDataForm(event) {
     event.preventDefault();
 

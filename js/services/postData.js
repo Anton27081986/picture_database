@@ -24,5 +24,9 @@ export async function imagePostData(url, data) {
         body: JSON.stringify(data)
     });
 
+    if(result.ok) {
+        alert('Картинка успешно добавлена');
+    }
+
     return await result.json();
 }
