@@ -3,9 +3,9 @@
 const configObj = {
     url: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
     apiKey: 'AIzaSyCiCG0DVPmWEybef865AxRnWFwj9S2CKGA',
-    urlStart: 'http://127.0.0.1:5500/index.html',
-    urlCloud: 'http://127.0.0.1:5500/cloud.html',
-    urlLocalDB: 'http://127.0.0.1:5500/local_DB.html',
+    urlStart: 'http://127.0.0.1:5501/index.html',
+    urlCloud: 'http://127.0.0.1:5501/cloud.html',
+    urlLocalDB: 'http://127.0.0.1:5501/local_DB.html',
     apiKeyFlickr: 'c494d0c36c1ef5c9851f47d266649611',
     urlFlickr: 'https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=c494d0c36c1ef5c9851f47d266649611&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1/json',
     urlImageFB: 'https://pictures-db-default-rtdb.firebaseio.com/',

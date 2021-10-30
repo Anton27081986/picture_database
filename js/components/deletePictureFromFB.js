@@ -5,15 +5,10 @@ import { deleteData } from "../services/deleteData.js";
 export function deletePictureFromFB() {
     document.querySelectorAll('.btn__del__picture').forEach(item => {
         item.addEventListener('click',() => {
-            console.log(item.parentElement.parentElement.querySelector('.pictures__from__FB').src);
-            const objDeleteImage = {
-                title: item.parentElement.querySelector('h3').textContent,
-                url: item.parentElement.parentElement.querySelector('.pictures__from__FB').src,
-            }; 
-            const title = item.parentElement.querySelector('h3').textContent;
-                
-            
-            deleteData(`${configObj.urlImageFB}pictures.json`);
+            const id = item.parentElement.parentElement.id;
+            deleteData(`${configObj.urlImageFB}pictures/${id}.json`);
+            alert('Картинка успешно удалена');
+            document.location.reload();
         });
     });
 }

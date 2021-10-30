@@ -30,6 +30,7 @@ function getDataFromAPI() {
     getData(`https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${configObj.apiKeyFlickr}&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1`)
     .then(data => {
         data.photos.photo.forEach(item => {
+            // console.log(item.id);
             divImages.insertAdjacentHTML('afterbegin', `
             <div class="product-item">
                 <img class="pictures__in__cloud" src="https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg"/>
@@ -50,7 +51,7 @@ function getDataFromAPI() {
     
 }
 
-function addImageToCollection() {
+export function addImageToCollection() {
     
     document.querySelectorAll('.button__add__image').forEach(item => {
         item.addEventListener('click', () => {
@@ -66,7 +67,27 @@ function addImageToCollection() {
 
 
 
-
+// .then(data => {
+//     console.log(data.photos.photo);
+//     data.photos.photo.forEach(item => {
+//         // console.log(item.id);
+//         divImages.insertAdjacentHTML('afterbegin', `
+//         <div class="product-item">
+//             <img class="pictures__in__cloud" src="https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg"/>
+//             <div class="product-list">
+//                 <h3>${item.title}</h3>
+//                 <button class="button button__add__image">Добавить в коллекцию</button>
+//             </div>
+//         </div>
+//         `);
+//     });
+// })
+// .then(data => new Promise((resolve, reject) => {
+    
+//     addImageToCollection();
+//     resolve();
+    
+// }));
 
 
 
